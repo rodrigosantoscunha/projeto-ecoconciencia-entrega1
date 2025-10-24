@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia: Como Montar a Sua Primeira Composteira em Casa | EcoConsciência Blog</title>
     
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/main.css"> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="main-header">
         <div class="container">
             <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo da EcoConsciência"></a>
+            <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
             <nav class="main-nav">
+                <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
                 <a href="../index.html">Início</a>
                 <a href="../sobre.html">Sobre Nós</a>
-                <a href="../projetos.html">Nossos Projetos</a>
+                <div class="nav-item dropdown"> 
+                    <a href="../projetos.html" class="nav-link">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../projeto-sementes.html">Sementes do Amanhã</a></li>
+                        <li><a href="../projeto-guardioes.html">Guardiões da Mata</a></li>
+                        <li><a href="../projeto-oceano.html">Oceano Limpo</a></li>
+                        <li><a href="../projeto-cidades.html">Cidades Verdes</a></li>
+                        <li><a href="../projeto-consumo.html">Consumo Consciente</a></li>
+                    </ul>
+                </div> 
                 <a href="../cadastro.html">Faça Parte</a>
                 <a href="../blog.html">Blog</a>
             </nav>
@@ -30,13 +42,23 @@
                 </header>
                 <div class="post-full-content">
                     <p>Na EcoConsciência, acreditamos que cada gesto conta na construção de um futuro mais sustentável...</p>
-                    </div>
+                    <table class="compost-table">
+                        <thead><tr><th>Pode Compor</th><th>Não Pode Compor</th></tr></thead>
+                        <tbody>
+                            <tr><td>Restos de frutas e vegetais</td><td>Carne, peixe e laticínios (atraem pragas)</td></tr>
+                            <tr><td>Borra de café e saquinhos de chá</td><td>Gorduras e óleos de cozinha</td></tr>
+                            <tr><td>Cascas de ovos</td><td>Fezes de animais domésticos (podem conter patógenos)</td></tr>
+                            <tr><td>Folhas secas, relva cortada</td><td>Plantas doentes ou infestadas</td></tr>
+                            <tr><td>Guardanapos de papel e papelão (sem tinta)</td><td>Plásticos, vidros, metais</td></tr>
+                        </tbody>
+                    </table>
+                     </div>
                 <figure class="post-full-image">
                     <img src="../images/blog-post-composteira.jpg" alt="Composteira doméstica com matéria orgânica">
                 </figure>
             </article>
             <div class="back-to-projects">
-                <a href="../blog.html"><i class="fas fa-arrow-left"></i> Voltar para o Blog</a>
+                 <a href="../blog.html"><i class="fas fa-arrow-left"></i> Voltar para o Blog</a>
             </div>
         </div>
     </main>

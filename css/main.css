@@ -1,0 +1,8 @@
+/* --- ARQUIVO PRINCIPAL DE IMPORTAÇÃO --- */
+@import '_variables.css';
+@import '_base.css';
+@import '_header.css';
+@import '_footer.css';
+@import '_layout.css';
+@import '_components.css';
+@import '_forms.css';

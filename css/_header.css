@@ -1,0 +1,9 @@
+
+/* --- RODAPÉ --- */
+.main-footer { background: var(--footer-bg-color); color: var(--white-color); text-align: center; padding: 40px 0; margin-top: 60px; /* Espaço acima do rodapé */ }
+.footer-contact { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px 40px; /* Mais espaço horizontal */ margin-bottom: 25px; opacity: 0.9; }
+.footer-contact span { font-size: 0.9em; } /* Tamanho ligeiramente menor */
+.footer-contact i { margin-right: 8px; color: var(--secondary-color); }
+.footer-copyright { border-top: 1px solid #444; padding-top: 25px; margin-top: 25px; }
+.footer-copyright p { margin: 0; font-size: 0.9em; }
+.slogan { font-size: 0.8em; opacity: 0.7; margin-top: 5px; }
