@@ -1,0 +1,444 @@
+/* Importando uma fonte do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- CONFIGURAÇÕES GERAIS (Variáveis de Cores) --- */
+:root {
+    --primary-color: #4A634A;
+    --secondary-color: #A9B489;
+    --dark-text-color: #333;
+    --light-text-color: #555;
+    --light-bg-color: #f9f9f9;
+    --white-color: #ffffff;
+    --border-color: #e0e0e0;
+    --footer-bg-color: #333;
+}
+
+/* --- ESTILOS DE BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--dark-text-color);
+    background-color: var(--white-color);
+}
+a { text-decoration: none; transition: color 0.3s ease; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-title { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: var(--primary-color); font-weight: 600; }
+
+/* --- CABEÇALHO --- */
+.main-header {
+    background: var(--white-color);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.main-header .logo img { max-height: 45px; width: auto; }
+.main-header .main-nav a {
+    margin: 0 20px;
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--light-text-color);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+.main-header .main-nav a:hover { color: var(--primary-color); }
+
+/* --- MENU RESPONSIVO (HAMBÚRGUER) --- */
+.menu-toggle,
+.menu-close {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* --- RODAPÉ --- */
+.main-footer {
+    background: var(--footer-bg-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 40px 0;
+}
+.footer-contact { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 30px; margin-bottom: 25px; opacity: 0.9; }
+.footer-contact span { font-size: 0.95em; }
+.footer-contact i { margin-right: 8px; color: var(--secondary-color); }
+.footer-copyright { border-top: 1px solid #444; padding-top: 25px; margin-top: 25px; }
+.footer-copyright p { margin: 0; }
+.slogan { font-size: 0.9em; opacity: 0.7; margin-top: 5px; }
+
+/* --- LAYOUTS --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/banner-home.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+}
+.hero-brand-name { font-size: 4.5em; font-weight: 700; margin-bottom: 15px; letter-spacing: 2px; text-transform: none; opacity: 1; }
+.hero-content h1 { font-size: 2.5em; margin-bottom: 30px; font-weight: 400; }
+.page-header {
+    background: var(--primary-color);
+    padding: 80px 0;
+    text-align: center;
+    color: var(--white-color);
+}
+.page-header h1 { font-size: 3em; font-weight: 700; }
+.main-content { padding: 80px 0; }
+.features-section, .personas-section { padding: 80px 0; }
+.features-section { background-color: var(--light-bg-color); }
+.project-detail-layout { display: flex; gap: 50px; margin-bottom: 60px; max-width: 900px; margin: 0 auto 60px auto; }
+.project-detail-text { flex: 1.5; }
+.project-detail-image { flex: 1; }
+.project-detail-image img { width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* --- COMPONENTES --- */
+.cta-button {
+    background: var(--secondary-color);
+    color: var(--dark-text-color);
+    padding: 18px 45px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.cta-button:hover { background: #9aa579; transform: translateY(-3px); }
+.feature-link, .project-link, .post-link { display: inline-block; font-weight: 600; color: var(--primary-color); }
+.feature-link:hover, .project-link:hover, .post-link:hover { color: var(--secondary-color); text-decoration: underline; }
+.project-link i, .post-link i { margin-left: 5px; transition: transform 0.3s ease; }
+.project-card:hover .project-link i, .post-card:hover .post-link i { transform: translateX(5px); }
+.back-to-projects { text-align: center; margin-top: 40px; }
+.back-to-projects a {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.back-to-projects a:hover { background-color: var(--primary-color); color: var(--white-color); }
+.features-section .container, .personas-wrapper, .values-wrapper, .projects-grid, .blog-grid { display: grid; gap: 30px; }
+.features-section .container { grid-template-columns: repeat(4, 1fr); } /* <<-- 4 colunas padrão */
+.personas-wrapper, .values-wrapper { grid-template-columns: repeat(3, 1fr); } /* <<-- 3 colunas padrão */
+.projects-grid, .blog-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.feature-card, .persona-card, .project-card, .post-card {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover, .persona-card:hover, .project-card:hover, .post-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+.feature-card { text-align: center; padding: 40px 30px; }
+.feature-card i { font-size: 3em; color: var(--primary-color); margin-bottom: 20px; }
+.feature-card h3, .persona-card h4, .project-content h3, .post-content h3 { font-weight: 600; }
+.feature-card p { font-size: 0.95em; color: var(--light-text-color); }
+.persona-card { padding: 30px; text-decoration: none; color: inherit; }
+.persona-card p { color: var(--light-text-color); }
+.persona-card ul { list-style: none; padding: 0; }
+.persona-card ul li { padding-left: 25px; position: relative; color: var(--light-text-color); }
+.persona-card ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--secondary-color); }
+.project-card, .post-card { overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+.project-card img, .post-card img { width: 100%; height: 220px; object-fit: cover; }
+.project-content, .post-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+.project-category, .post-category { font-size: 0.9em; font-weight: 600; color: var(--secondary-color); margin-bottom: 15px; }
+.project-content p { color: var(--light-text-color); flex-grow: 1; }
+.post-content h3 { flex-grow: 1; }
+.compost-table { width: 100%; border-collapse: collapse; }
+.compost-table th, .compost-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+.compost-table th { background-color: var(--light-bg-color); }
+
+/* --- FORMULÁRIOS --- */
+.form-intro, .login-container { text-align: center; max-width: 800px; margin: 0 auto; padding: 80px 0; }
+.login-container { background-color: var(--light-bg-color); }
+.form-container, .login-container .form-container { max-width: 800px; margin: 0 auto; background: var(--white-color); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); }
+.login-container .form-container { max-width: 450px; }
+.form-intro h2, .login-container h2 { font-weight: 600; }
+.form-intro p, .form-intro-text { color: var(--light-text-color); }
+.form-container fieldset { border: 1px solid var(--border-color); border-radius: 5px; padding: 20px; margin-bottom: 30px; }
+.form-container legend { font-weight: 600; color: var(--primary-color); padding: 0 10px; }
+.form-group { flex: 1; margin-bottom: 20px; }
+.form-group-row { display: flex; gap: 20px; }
+.cep-group { flex: 0.5; }
+.endereco-group { flex: 1.5; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 5px; font-family: 'Poppins', sans-serif; color: var(--light-text-color); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); }
+.form-btn { width: 100%; padding: 15px; background: var(--primary-color); color: var(--white-color); border: none; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; }
+.form-btn:hover { background: #3a503a; }
+.radio-group { gap: 15px; }
+.radio-label { flex: 1; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid var(--border-color); border-radius: 5px; cursor: pointer; }
+.radio-label:hover { border-color: var(--secondary-color); }
+.radio-label input[type="radio"]:checked { accent-color: var(--primary-color); }
+.form-options { display: flex; justify-content: space-between; align-items: center; font-size: 0.9em; }
+.form-options label { display: flex; align-items: center; gap: 5px; font-weight: 400; }
+.form-options a { color: var(--primary-color); text-decoration: none; }
+.form-options a:hover { text-decoration: underline; }
+.form-register { text-align: center; }
+.form-register a { font-weight: 600; color: var(--primary-color); }
+
+/* --- BREAKPOINTS RESPONSIVOS --- */
+@media (max-width: 1200px) {
+    .container { max-width: 960px; }
+}
+@media (max-width: 992px) {
+    .container { max-width: 720px; }
+    .menu-toggle { display: block; }
+    .main-nav { display: none; position: fixed; top: 0; right: 0; width: 80%; max-width: 300px; height: 100vh; background-color: var(--white-color); box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); flex-direction: column; align-items: flex-start; padding: 60px 30px 30px 30px; z-index: 1000; }
+    .main-nav.menu-open { display: flex; }
+    .menu-close { display: block; position: absolute; top: 20px; right: 20px; font-size: 1.5em; }
+    .main-nav a { margin: 15px 0; font-size: 1.2em; width: 100%; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
+    .main-nav a:last-child { border-bottom: none; }
+    
+    /* CORREÇÃO PARA 2 COLUNAS EM TABLET */
+    .features-section .container,
+    .personas-wrapper,
+    .values-wrapper,
+    .projects-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .about-section, .mission-vision, .project-detail-layout { flex-direction: column; text-align: center; }
+    .mission-vision { gap: 30px; padding: 40px; }
+    .mission-card { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 30px; }
+    .vision-card { padding-left: 0; }
+}
+@media (max-width: 768px) {
+    .container { max-width: 540px; }
+    .hero-brand-name { font-size: 3.5em; }
+    .hero-content h1 { font-size: 2em; }
+    .page-header h1, .project-detail-header h1 { font-size: 2.5em; }
+    
+    /* CORREÇÃO PARA VALORES FICAR EM 2 COLUNAS */
+    .values-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .container { padding: 0 15px; }
+    
+    /* CORREÇÃO PARA 1 COLUNA EM CELULAR */
+    .features-section .container,
+    .personas-wrapper,
+    .values-wrapper,
+    .projects-grid,
+    .blog-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .hero-brand-name { font-size: 2.8em; }
+    .hero-content h1 { font-size: 1.8em; }
+    .page-header h1, .project-detail-header h1 { font-size: 2.2em; }
+    .section-title { font-size: 1.8em; }
+    .form-group-row { flex-direction: column; gap: 0; }
+    .form-container { padding: 30px; }
+    .footer-contact { flex-direction: column; gap: 15px; }
+}
+@media (max-width: 480px) {
+    .hero-brand-name { font-size: 2.2em; }
+    .hero-content h1 { font-size: 1.5em; }
+    .cta-button { padding: 15px 30px; font-size: 1em; }
+    .main-nav { width: 90%; }
+}
+
+/* --- ESTILOS PARA O SUBMENU DROPDOWN --- */
+
+/* Contêiner para o item do menu com dropdown */
+.nav-item.dropdown {
+    position: relative; /* Necessário para posicionar o submenu */
+    display: inline-block; /* Para ficar lado a lado com outros itens */
+}
+
+/* Link principal do dropdown */
+.nav-link {
+    display: inline-flex; /* Para alinhar o ícone com o texto */
+    align-items: center;
+}
+
+/* Ícone da seta */
+.dropdown-icon {
+    font-size: 0.7em; /* Ícone menor */
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Submenu (lista suspensa) */
+.dropdown-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute; /* Posicionado em relação ao item pai */
+    top: 100%; /* Aparece logo abaixo do link principal */
+    left: 0;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 5px 5px; /* Cantos arredondados apenas embaixo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 220px; /* Largura mínima do submenu */
+    z-index: 100; /* Garante que fique sobre outros conteúdos */
+}
+
+/* Links dentro do submenu */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--light-text-color);
+    white-space: nowrap; /* Impede que o texto quebre linha */
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--light-bg-color);
+    color: var(--primary-color);
+}
+
+/* Mostra o submenu quando o mouse passa sobre o item pai */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Gira a seta quando o mouse passa sobre o item pai */
+.nav-item.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* --- Ajustes para o Dropdown no Menu Mobile --- */
+@media (max-width: 992px) {
+    /* No menu mobile, o dropdown se comporta como links normais */
+    .nav-item.dropdown {
+        position: static; /* Remove o posicionamento relativo */
+        display: block; /* Ocupa a linha inteira */
+        width: 100%;
+    }
+    .dropdown-menu {
+        display: block; /* Sempre visível no mobile */
+        position: static; /* Remove o posicionamento absoluto */
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0 0 0 20px; /* Adiciona indentação para os subitens */
+        min-width: auto;
+        margin-top: 10px;
+    }
+    .dropdown-menu li a {
+        padding: 8px 0; /* Ajusta o espaçamento */
+        font-size: 1em; /* Tamanho um pouco menor */
+        border-bottom: 1px dashed var(--border-color); /* Separador sutil */
+    }
+     .dropdown-menu li:last-child a {
+        border-bottom: none;
+    }
+    .dropdown-icon {
+        display: none; /* Esconde a seta no mobile */
+    }
+    .nav-item.dropdown:hover .dropdown-menu { /* Garante que continue visível */
+        display: block;
+    }
+}
+
+/* --- ESTILOS PARA O SUBMENU DROPDOWN --- */
+
+/* Contêiner para o item do menu com dropdown */
+.nav-item.dropdown {
+    position: relative; 
+    display: inline-block; 
+}
+
+/* Link principal do dropdown */
+.nav-link {
+    display: inline-flex; 
+    align-items: center;
+}
+
+/* Ícone da seta */
+.dropdown-icon {
+    font-size: 0.7em; 
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Submenu (lista suspensa) */
+.dropdown-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 5px 5px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 220px; 
+    z-index: 100; 
+}
+
+/* Links dentro do submenu */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--light-text-color);
+    white-space: nowrap; 
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--light-bg-color);
+    color: var(--primary-color);
+}
+
+/* Mostra o submenu quando o mouse passa sobre o item pai (Desktop) */
+/* Usamos !important aqui temporariamente para garantir que funcione, 
+   depois podemos refinar se necessário */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block !important; 
+}
+
+/* Gira a seta quando o mouse passa sobre o item pai */
+.nav-item.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* --- Ajustes para o Dropdown no Menu Mobile --- */
+@media (max-width: 992px) {
+    .nav-item.dropdown {
+        position: static; 
+        display: block; 
+        width: 100%;
+    }
+    /* No mobile, o submenu fica visível dentro do menu lateral */
+    .dropdown-menu {
+        display: block; 
+        position: static; 
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0 0 0 20px; /* Indentação */
+        min-width: auto;
+        margin-top: 10px;
+    }
+    .dropdown-menu li a {
+        padding: 8px 0; 
+        font-size: 1em; 
+        border-bottom: 1px dashed var(--border-color); 
+    }
+     .dropdown-menu li:last-child a {
+        border-bottom: none;
+    }
+    .dropdown-icon {
+        display: none; /* Esconde seta no mobile */
+    }
+    /* Garante que o :hover não esconda o menu no mobile */
+     .nav-item.dropdown:hover > .dropdown-menu {
+        display: block !important;
+    }
+}
