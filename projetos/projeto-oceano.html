@@ -4,43 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto "Oceano Limpo, Futuro Vivo" | EcoConsciência</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
     <header class="main-header">
-    <div class="container">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo da EcoConsciência"></a>
-        
-        <nav class="main-nav">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre Nós</a>
-            <a href="projetos.html">Nossos Projetos</a>
-            <a href="cadastro.html">Faça Parte</a>
-            <a href="blog.html">Blog</a>
-        </nav>
+        <div class="container">
+            <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo da EcoConsciência"></a>
+            <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+            <nav class="main-nav">
+                <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+                <a href="../index.html">Início</a>
+                <a href="../sobre.html">Sobre Nós</a>
+                <div class="nav-item dropdown"> 
+                    <a href="../projetos.html" class="nav-link">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../projetos/projeto-sementes.html">Sementes do Amanhã</a></li>
+                        <li><a href="../projetos/projeto-guardioes.html">Guardiões da Mata</a></li>
+                        <li><a href="../projetos/projeto-oceano.html">Oceano Limpo</a></li>
+                        <li><a href="../projetos/projeto-cidades.html">Cidades Verdes</a></li>
+                        <li><a href="../projetos/projeto-consumo.html">Consumo Consciente</a></li>
+                    </ul>
+                </div> 
+                <a href="../cadastro.html">Faça Parte</a>
+                <a href="../blog.html">Blog</a>
+            </nav>
         </div>
-</header>
-
+    </header>
     <section class="project-detail-header">
         <div class="container">
             <p>Nossos Projetos</p>
             <h1>Projeto "Oceano Limpo, Futuro Vivo"</h1>
         </div>
     </section>
-
     <main class="main-content">
         <div class="container">
             <div class="project-detail-layout">
                 <div class="project-detail-text">
                     <h2>Objetivo</h2>
                     <p>Reduzir a poluição plástica em ambientes costeiros e marinhos através de ações de limpeza e campanhas de sensibilização sobre o descarte correto de resíduos.</p>
-
                     <h2>Descrição</h2>
                     <p>O "Oceano Limpo, Futuro Vivo" mobiliza voluntários para a limpeza de praias e mangues, recolhendo resíduos sólidos que ameaçam a vida marinha. Complementarmente, desenvolvemos campanhas educativas em escolas e comunidades costeiras, enfatizando a redução do consumo de plásticos, a reciclagem e a economia circular.</p>
-
                     <h2>Impacto Esperado</h2>
                     <ul>
                         <li><i class="fas fa-check"></i> Diminuição da poluição marinha.</li>
@@ -48,24 +52,21 @@
                         <li><i class="fas fa-check"></i> Mudança de comportamento em relação ao consumo e descarte de plásticos.</li>
                     </ul>
                 </div>
-
                 <div class="project-detail-image">
-                    <img src="images/projeto-oceano.jpg" alt="Pessoas limpando uma praia poluída">
+                    <img src="../images/projeto-oceano.jpg" alt="Pessoas limpando uma praia poluída">
                 </div>
             </div>
-
             <div class="back-to-projects">
-                <a href="projetos.html"><i class="fas fa-arrow-left"></i> Voltar para todos os projetos</a>
+                <a href="../projetos.html"><i class="fas fa-arrow-left"></i> Voltar para todos os projetos</a>
             </div>
         </div>
     </main>
-
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>
-            <p class="slogan">"Cultivando o Futuro, Semeando o Conhecimento."</p>
+            <div class="footer-contact">...</div>
+            <div class="footer-copyright">...</div>
         </div>
     </footer>
-
+    <script src="../scripts.js"></script> 
 </body>
 </html>

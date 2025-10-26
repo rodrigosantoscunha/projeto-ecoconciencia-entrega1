@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto "Sementes do Amanhã" | EcoConsciência</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="../style.css"> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="main-header">
-    <div class="container">
-        <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo da EcoConsciência"></a>
-        
-        <nav class="main-nav">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre Nós</a>
-            <a href="projetos.html">Nossos Projetos</a>
-            <a href="cadastro.html">Faça Parte</a>
-            <a href="blog.html">Blog</a>
-        </nav>
+        <div class="container">
+            <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo da EcoConsciência"></a>
+            <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+            <nav class="main-nav">
+                <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+                <a href="../index.html">Início</a>
+                <a href="../sobre.html">Sobre Nós</a>
+                <div class="nav-item dropdown"> 
+                    <a href="../projetos.html" class="nav-link">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                         {/* Caminhos CORRIGIDOS para ../projetos/ */}
+                        <li><a href="../projetos/projeto-sementes.html">Sementes do Amanhã</a></li>
+                        <li><a href="../projetos/projeto-guardioes.html">Guardiões da Mata</a></li>
+                        <li><a href="../projetos/projeto-oceano.html">Oceano Limpo</a></li>
+                        <li><a href="../projetos/projeto-cidades.html">Cidades Verdes</a></li>
+                        <li><a href="../projetos/projeto-consumo.html">Consumo Consciente</a></li>
+                    </ul>
+                </div> 
+                <a href="../cadastro.html">Faça Parte</a>
+                <a href="../blog.html">Blog</a>
+            </nav>
         </div>
-</header>
-
+    </header>
     <section class="project-detail-header">
         <div class="container">
             <p>Nossos Projetos</p>
@@ -45,28 +57,20 @@
                     </ul>
                 </div>
                 <div class="project-detail-image">
-                    <img src="images/projeto-sementes.jpg" alt="Crianças aprendendo em uma horta escolar">
+                    <img src="../images/projeto-sementes.jpg" alt="Crianças aprendendo em uma horta escolar">
                 </div>
             </div>
             <div class="back-to-projects">
-                <a href="projetos.html"><i class="fas fa-arrow-left"></i> Voltar para todos os projetos</a>
+                <a href="../projetos.html"><i class="fas fa-arrow-left"></i> Voltar para todos os projetos</a>
             </div>
         </div>
     </main>
-   
     <footer class="main-footer">
-    <div class="container">
-        <div class="footer-contact">
-            <span><i class="fas fa-phone"></i> (11) 3234-5678</span>
-            <span><i class="fas fa-envelope"></i> contato@ecoconciencia.com</span>
-            <span><i class="fas fa-map-marker-alt"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+        <div class="container">
+            <div class="footer-contact">...</div>
+            <div class="footer-copyright">...</div>
         </div>
-        <div class="footer-copyright">
-            <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>
-            <p class="slogan">"Cultivando o Futuro, Semeando o Conhecimento."</p>
-        </div>
-    </div>
-</footer>
-
+    </footer>
+    <script src="../scripts.js"></script> 
 </body>
 </html>

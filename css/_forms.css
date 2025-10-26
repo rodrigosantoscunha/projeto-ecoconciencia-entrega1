@@ -1,4 +1,3 @@
-/* --- FORMULÁRIOS --- */
 .form-intro, .login-container { text-align: center; max-width: 800px; margin: 0 auto; padding: 60px 0; }
 .login-container { background-color: var(--light-bg-color); }
 .form-container, .login-container .form-container { max-width: 800px; margin: 0 auto; background: var(--white-color); padding: 30px 40px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
@@ -32,13 +31,11 @@
 .form-options a:hover { text-decoration: underline; }
 .form-register { text-align: center; margin-top: 20px; font-size: 0.9em; }
 .form-register a { font-weight: 600; color: var(--primary-color); }
-
-/* Validação Visual */
 .form-group input:invalid:not(:placeholder-shown):not(:focus),
-.form-group select:invalid:not(:focus):not([value=""]), /* Valida select se não for a opção vazia */
+.form-group select:invalid:not(:focus):not([value=""]),
 .form-group textarea:invalid:not(:placeholder-shown):not(:focus),
 input:user-invalid {
-    border-color: var(--danger-color) !important; /* !important para garantir */
+    border-color: var(--danger-color) !important;
     background-color: var(--danger-bg) !important;
 }
 .form-group select:invalid { color: var(--light-text-color); }

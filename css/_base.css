@@ -1,5 +1,3 @@
-
-/* --- ESTILOS DE BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--dark-text-color); background-color: var(--white-color); }
@@ -11,6 +9,5 @@ h1 { font-size: 2.8em; } h2 { font-size: 2.2em; color: var(--primary-color);} h3
 p { margin-bottom: 1em; color: var(--light-text-color); }
 ul, ol { margin-bottom: 1em; padding-left: 1.5em; }
 li { margin-bottom: 0.5em; }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; /* Padding padrão */ }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 .section-title { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: var(--primary-color); font-weight: 600; }

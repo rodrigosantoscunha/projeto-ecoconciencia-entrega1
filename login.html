@@ -4,55 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | EcoConsciência</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo da EcoConsciência"></a>
+            <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
             <nav class="main-nav">
+                <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+                <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
-                <a href="projetos.html">Nossos Projetos</a>
+                <div class="nav-item dropdown"> 
+                    <a href="projetos.html" class="nav-link">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projeto-sementes.html">Sementes do Amanhã</a></li>
+                        <li><a href="projeto-guardioes.html">Guardiões da Mata</a></li>
+                        <li><a href="projeto-oceano.html">Oceano Limpo</a></li>
+                        <li><a href="projeto-cidades.html">Cidades Verdes</a></li>
+                        <li><a href="projeto-consumo.html">Consumo Consciente</a></li>
+                    </ul>
+                </div> 
                 <a href="cadastro.html">Faça Parte</a>
                 <a href="blog.html">Blog</a>
             </nav>
         </div>
     </header>
-
-    <main class="main-content">
-        <div class="login-container">
-            <div class="form-container">
-                <h2>Acesse sua Conta</h2>
-                <p class="form-intro-text">Bem-vindo(a) de volta! Faça login para doar, acompanhar projetos e gerenciar seu perfil.</p>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-                    </div>
-                    <div class="form-options">
-                        <label><input type="checkbox" name="remember"> Lembrar-me</label>
-                        <a href="#">Esqueci minha senha</a>
-                    </div>
-                    <button type="submit" class="form-btn">Entrar</button>
-                    <p class="form-register">Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a>.</p>
-                </form>
-            </div>
+    <main class="main-content login-container">
+        <div class="form-container">
+            <h2>Acesse sua Conta</h2>
+            <p class="form-intro-text">Bem-vindo(a) de volta! Faça login para doar, acompanhar projetos e gerenciar seu perfil.</p>
+            <form action="#" method="POST">
+                <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="Digite seu e-mail" required></div>
+                <div class="form-group"><label for="password">Senha</label><input type="password" id="password" name="password" placeholder="Digite sua senha" required></div>
+                <div class="form-options"><label><input type="checkbox" name="remember"> Lembrar-me</label><a href="#">Esqueci senha</a></div>
+                <button type="submit" class="form-btn">Entrar</button>
+                <p class="form-register">Não tem conta? <a href="cadastro.html">Cadastre-se</a>.</p>
+            </form>
         </div>
     </main>
-
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>
-            <p class="slogan">"Cultivando o Futuro, Semeando o Conhecimento."</p>
+            <div class="footer-contact">
+                <span><i class="fas fa-phone"></i> (11) 3234-5678</span>
+                <span><i class="fas fa-envelope"></i> contato@ecoconciencia.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>
+                <p class="slogan">"Cultivando o Futuro, Semeando o Conhecimento."</p>
+            </div>
         </div>
     </footer>
-
+    <script src="scripts.js"></script> 
 </body>
 </html>

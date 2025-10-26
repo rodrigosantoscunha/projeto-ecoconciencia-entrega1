@@ -1,18 +1,14 @@
-/* Importando uma fonte do Google Fonts para um visual mais moderno */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* --- CONFIGURAÇÕES GERAIS (Variáveis de Cores) --- */
 :root {
-    --primary-color: #4A634A; /* Verde Principal */
-    --secondary-color: #A9B489; /* Verde Oliva */
-    --accent-color: #E5E5E5; /* Cinza claro para fundos/bordas */
-    --dark-text-color: #333; /* Texto escuro */
-    --medium-text-color: #555; /* Texto médio */
-    --light-text-color: #777; /* Texto claro */
+    --primary-color: #4A634A;
+    --secondary-color: #A9B489;
+    --dark-text-color: #333;
+    --medium-text-color: #555;
+    --light-text-color: #777;
     --white-color: #ffffff;
-    --light-bg-color: #f9f9f9; /* Fundo de seção claro */
-    --border-color: #e0e0e0; /* Bordas gerais */
-    --footer-bg-color: #333; /* Fundo do rodapé */
+    --light-bg-color: #f9f9f9;
+    --border-color: #e0e0e0;
+    --footer-bg-color: #333;
     --success-color: #28a745;
     --danger-color: #dc3545;
     --warning-color: #ffc107;
