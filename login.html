@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Pular para o Conteúdo Principal</a>
+
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo da EcoConsciência"></a>
@@ -18,7 +20,7 @@
                 <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
-                <div class="nav-item dropdown"> 
+                <div class="nav-item dropdown">
                     <a href="projetos.html" class="nav-link">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="projetos/projeto-sementes.html">Sementes do Amanhã</a></li>
@@ -27,13 +29,14 @@
                         <li><a href="projetos/projeto-cidades.html">Cidades Verdes</a></li>
                         <li><a href="projetos/projeto-consumo.html">Consumo Consciente</a></li>
                     </ul>
-                </div> 
+                </div>
                 <a href="cadastro.html">Faça Parte</a>
                 <a href="blog.html">Blog</a>
             </nav>
         </div>
     </header>
-    <main class="main-content login-container">
+
+    <main class="main-content login-container" id="main-content">
         <div class="form-container">
             <h2>Acesse sua Conta</h2>
             <p class="form-intro-text">Bem-vindo(a) de volta! Faça login para doar, acompanhar projetos e gerenciar seu perfil.</p>
@@ -60,6 +63,6 @@
         </div>
     </footer>
     
-    <script src="scripts.js"></script> 
+    <script src="scripts.js"></script>
 </body>
 </html>
