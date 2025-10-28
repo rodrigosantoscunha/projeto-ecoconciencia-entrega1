@@ -15,14 +15,18 @@
     <header class="main-header">
         <div class="container">
             <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo da EcoConsciência"></a>
-            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            
+            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            
             <nav class="main-nav" id="main-navigation">
-                <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times"></i></button>
+                <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times" aria-hidden="true"></i></button>
+                
                 <a href="../index.html">Início</a>
                 <a href="../sobre.html">Sobre Nós</a>
+                
                 <div class="nav-item dropdown">
-                    <a href="../projetos.html" class="nav-link" id="projetos-menu-label" aria-haspopup="true" aria-expanded="false">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="projetos-menu-label">
+                    <a href="../projetos.html" class="nav-link" id="projetos-menu-label" aria-haspopup="true" aria-expanded="false">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu" id="projetos-submenu" aria-labelledby="projetos-menu-label">
                         <li><a href="../projetos/projeto-sementes.html">Sementes do Amanhã</a></li>
                         <li><a href="../projetos/projeto-guardioes.html">Guardiões da Mata</a></li>
                         <li><a href="../projetos/projeto-oceano.html">Oceano Limpo</a></li>
@@ -30,9 +34,10 @@
                         <li><a href="../projetos/projeto-consumo.html">Consumo Consciente</a></li>
                     </ul>
                 </div>
+                
                 <a href="../cadastro.html">Faça Parte</a>
                 <a href="../blog.html">Blog</a>
-            </nav>
+                </nav>
         </div>
     </header>
 
@@ -50,8 +55,8 @@
                     <h2>Como Atuamos</h2>
                     <p>O projeto "Oceano Limpo, Futuro Vivo" aborda a poluição plástica em duas frentes principais:</p>
                     <ol>
-                        <li><strong>Limpeza de Praias e Mangues:</strong> Mobilizamos voluntários para mutirões de limpeza em áreas costeiras. Estas ações não só removem o lixo visível, mas também servem como poderosas ferramentas de sensibilização, mostrando a dimensão do problema e a importância da participação de todos.</li>
-                        <li><strong>Educação e Sensibilização Comunitária:</strong> Realizamos workshops e palestras em escolas e comunidades costeiras, focando na redução do consumo de plásticos descartáveis, na importância da reciclagem e na promoção de alternativas sustentáveis. Acreditamos que a mudança de comportamento é a chave para um impacto duradouro.</li>
+                        <li>**Limpeza de Praias e Mangues:** Mobilizamos voluntários para mutirões de limpeza em áreas costeiras. Estas ações não só removem o lixo visível, mas também servem como poderosas ferramentas de sensibilização, mostrando a dimensão do problema e a importância da participação de todos.</li>
+                        <li>**Educação e Sensibilização Comunitária:** Realizamos workshops e palestras em escolas e comunidades costeiras, focando na redução do consumo de plásticos descartáveis, na importância da reciclagem e na promoção de alternativas sustentáveis. Acreditamos que a mudança de comportamento é a chave para um impacto duradouro.</li>
                     </ol>
                     <h2>O Nosso Impacto</h2>
                     <p>Desde o início do projeto, já removemos toneladas de resíduos plásticos de praias e mangues, protegendo habitats e espécies. Mais importante, temos visto um crescente envolvimento das comunidades, que se tornam "guardiões" dos seus próprios litorais. Cada pedaço de plástico recolhido, cada pessoa conscientizada, é um passo em direção a um oceano mais saudável e um futuro mais vivo.</p>
@@ -62,16 +67,25 @@
                     <img src="../images/blog-post-oceano.jpg" alt="Tartaruga marinha em uma praia com poluição plástica">
                 </figure>
             </article>
-            <div class="back-to-projects"> <a href="../blog.html"><i class="fas fa-arrow-left"></i> Voltar para o Blog</a>
+            <div class="back-to-projects">
+                <a href="../blog.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar para o Blog</a>
             </div>
         </div>
     </main>
+
     <footer class="main-footer">
         <div class="container">
-             <div class="footer-contact">
-                <span><i class="fas fa-phone"></i> (11) 3234-5678</span>
-                <span><i class="fas fa-envelope"></i> contato@ecoconciencia.com</span>
-                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+            <div class="footer-contact">
+                <span><i class="fas fa-phone" aria-hidden="true"></i> (11) 3234-5678</span>
+                <span><i class="fas fa-envelope" aria-hidden="true"></i> contato@ecoconciencia.com</span>
+                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+            </div>
+
+            <div class="theme-switcher">
+                <button id="theme-toggle-button" aria-label="Alternar tema claro/escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span class="sr-only">Alternar tema</span>
+                </button>
             </div>
             <div class="footer-copyright">
                 <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>

@@ -15,14 +15,18 @@
     <header class="main-header">
         <div class="container">
             <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo da EcoConsciência"></a>
-            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            
+            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            
             <nav class="main-nav" id="main-navigation">
-                <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times"></i></button>
+                <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times" aria-hidden="true"></i></button>
+                
                 <a href="../index.html">Início</a>
                 <a href="../sobre.html">Sobre Nós</a>
+                
                 <div class="nav-item dropdown">
-                    <a href="../projetos.html" class="nav-link" id="projetos-menu-label" aria-haspopup="true" aria-expanded="false">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="projetos-menu-label">
+                    <a href="../projetos.html" class="nav-link" id="projetos-menu-label" aria-haspopup="true" aria-expanded="false">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu" id="projetos-submenu" aria-labelledby="projetos-menu-label">
                         <li><a href="../projetos/projeto-sementes.html">Sementes do Amanhã</a></li>
                         <li><a href="../projetos/projeto-guardioes.html">Guardiões da Mata</a></li>
                         <li><a href="../projetos/projeto-oceano.html">Oceano Limpo</a></li>
@@ -30,9 +34,10 @@
                         <li><a href="../projetos/projeto-consumo.html">Consumo Consciente</a></li>
                     </ul>
                 </div>
+                
                 <a href="../cadastro.html">Faça Parte</a>
                 <a href="../blog.html">Blog</a>
-            </nav>
+                </nav>
         </div>
     </header>
 
@@ -62,17 +67,17 @@
                     <h2>Os Impactos na Saúde e no Meio Ambiente</h2>
                     <p>A presença de microplásticos no ambiente tem consequências graves:</p>
                     <ul>
-                        <li><strong>Vida Marinha:</strong> Animais marinhos confundem microplásticos com alimento, o que pode levar a bloqueios digestivos, fome e morte. Além disso, os plásticos podem libertar substâncias tóxicas.</li>
-                        <li><strong>Ecossistemas Terrestres:</strong> Podem alterar a estrutura do solo, afetar o crescimento das plantas e a saúde dos organismos do solo.</li>
-                        <li><strong>Saúde Humana:</strong> A ingestão e inalação de microplásticos são preocupações crescentes. Estudos indicam a sua presença em órgãos humanos, embora os efeitos a longo prazo ainda estejam a ser investigados, há preocupações com a inflamação, toxicidade e perturbação hormonal.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> **Vida Marinha:** Animais marinhos confundem microplásticos com alimento, o que pode levar a bloqueios digestivos, fome e morte. Além disso, os plásticos podem libertar substâncias tóxicas.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> **Ecossistemas Terrestres:** Podem alterar a estrutura do solo, afetar o crescimento das plantas e a saúde dos organismos do solo.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> **Saúde Humana:** A ingestão e inalação de microplásticos são preocupações crescentes. Estudos indicam a sua presença em órgãos humanos, embora os efeitos a longo prazo ainda estejam a ser investigados, há preocupações com a inflamação, toxicidade e perturbação hormonal.</li>
                     </ul>
                     <h2>O Que Podemos Fazer?</h2>
                     <p>A luta contra os microplásticos exige uma abordagem multifacetada. Na EcoConsciência, incentivamos:</p>
                     <ol>
-                        <li><strong>Redução:</strong> Diminuir o consumo de produtos com microesferas e optar por roupas de fibras naturais.</li>
-                        <li><strong>Reciclagem Correta:</strong> Garantir que os plásticos que usamos são devidamente reciclados para evitar que se tornem lixo.</li>
-                        <li><strong>Apoio à Inovação:</strong> Incentivar o desenvolvimento de materiais biodegradáveis e soluções de filtragem mais eficazes.</li>
-                        <li><strong>Consciência:</strong> Informar-se e partilhar conhecimento sobre o problema para mobilizar mais pessoas.</li>
+                        <li>**Redução:** Diminuir o consumo de produtos com microesferas e optar por roupas de fibras naturais.</li>
+                        <li>**Reciclagem Correta:** Garantir que os plásticos que usamos são devidamente reciclados para evitar que se tornem lixo.</li>
+                        <li>**Apoio à Inovação:** Incentivar o desenvolvimento de materiais biodegradáveis e soluções de filtragem mais eficazes.</li>
+                        <li>**Consciência:** Informar-se e partilhar conhecimento sobre o problema para mobilizar mais pessoas.</li>
                     </ol>
                     <p>Ao tomar consciência deste inimigo invisível e ao adotar práticas mais responsáveis, podemos proteger a nossa saúde e garantir um futuro mais limpo para todos os seres vivos. Junte-se à EcoConsciência nesta importante batalha!</p>
                 </div>
@@ -80,16 +85,24 @@
                     <img src="../images/blog-post-microplasticos.jpg" alt="Pedaços de plástico na areia da praia">
                 </figure>
             </article>
-            <div class="back-to-projects"> <a href="../blog.html"><i class="fas fa-arrow-left"></i> Voltar para o Blog</a>
+            <div class="back-to-projects">
+                <a href="../blog.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar para o Blog</a>
             </div>
         </div>
     </main>
     <footer class="main-footer">
         <div class="container">
             <div class="footer-contact">
-                <span><i class="fas fa-phone"></i> (11) 3234-5678</span>
-                <span><i class="fas fa-envelope"></i> contato@ecoconciencia.com</span>
-                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+                <span><i class="fas fa-phone" aria-hidden="true"></i> (11) 3234-5678</span>
+                <span><i class="fas fa-envelope" aria-hidden="true"></i> contato@ecoconciencia.com</span>
+                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+            </div>
+
+            <div class="theme-switcher">
+                <button id="theme-toggle-button" aria-label="Alternar tema claro/escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span class="sr-only">Alternar tema</span>
+                </button>
             </div>
             <div class="footer-copyright">
                 <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>

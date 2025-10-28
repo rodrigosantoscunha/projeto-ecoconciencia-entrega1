@@ -15,14 +15,18 @@
     <header class="main-header">
         <div class="container">
             <a href="../index.html" class="logo"><img src="../images/logo.png" alt="Logo da EcoConsciência"></a>
-            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            
+            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            
             <nav class="main-nav" id="main-navigation">
-                <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times"></i></button>
+                <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times" aria-hidden="true"></i></button>
+                
                 <a href="../index.html">Início</a>
                 <a href="../sobre.html">Sobre Nós</a>
+                
                 <div class="nav-item dropdown">
-                    <a href="../projetos.html" class="nav-link" id="projetos-menu-label" aria-haspopup="true" aria-expanded="false">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="projetos-menu-label">
+                    <a href="../projetos.html" class="nav-link" id="projetos-menu-label" aria-haspopup="true" aria-expanded="false">Nossos Projetos <i class="fas fa-chevron-down dropdown-icon" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu" id="projetos-submenu" aria-labelledby="projetos-menu-label">
                         <li><a href="../projetos/projeto-sementes.html">Sementes do Amanhã</a></li>
                         <li><a href="../projetos/projeto-guardioes.html">Guardiões da Mata</a></li>
                         <li><a href="../projetos/projeto-oceano.html">Oceano Limpo</a></li>
@@ -30,9 +34,10 @@
                         <li><a href="../projetos/projeto-consumo.html">Consumo Consciente</a></li>
                     </ul>
                 </div>
+                
                 <a href="../cadastro.html">Faça Parte</a>
                 <a href="../blog.html">Blog</a>
-            </nav>
+                </nav>
         </div>
     </header>
 
@@ -48,10 +53,10 @@
                     <h2>Por que a Educação Ambiental é Essencial?</h2>
                     <p>A crise climática, a perda de biodiversidade e a poluição são realidades que exigem uma resposta global e coordenada. No entanto, a base para qualquer solução eficaz reside na compreensão das causas e consequências dessas questões. A educação ambiental preenche essa lacuna, fornecendo:</p>
                     <ul>
-                        <li><strong>Conhecimento:</strong> Ajuda a entender os complexos sistemas naturais, o impacto das atividades humanas e as interconexões entre todos os seres vivos.</li>
-                        <li><strong>Consciência:</strong> Desperta a sensibilidade e o respeito pela natureza, incentivando a valorização dos recursos naturais e da vida em todas as suas formas.</li>
-                        <li><strong>Habilidades:</strong> Capacita indivíduos a identificar e resolver problemas ambientais, a tomar decisões informadas e a adotar práticas mais sustentáveis no dia a dia.</li>
-                        <li><strong>Participação:</strong> Motiva a ação individual e coletiva, encorajando o engajamento em iniciativas de conservação e na defesa de políticas ambientais mais robustas.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> <strong>Conhecimento:</strong> Ajuda a entender os complexos sistemas naturais, o impacto das atividades humanas e as interconexões entre todos os seres vivos.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> <strong>Consciência:</strong> Desperta a sensibilidade e o respeito pela natureza, incentivando a valorização dos recursos naturais e da vida em todas as suas formas.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> <strong>Habilidades:</strong> Capacita indivíduos a identificar e resolver problemas ambientais, a tomar decisões informadas e a adotar práticas mais sustentáveis no dia a dia.</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> <strong>Participação:</strong> Motiva a ação individual e coletiva, encorajando o engajamento em iniciativas de conservação e na defesa de políticas ambientais mais robustas.</li>
                     </ul>
                     <h2>Nossos Projetos em Ação</h2>
                     <p>Através de projetos como o "Sementes do Amanhã", que implementa hortas pedagógicas em escolas, e o "Guardiões da Mata", focado na recuperação de áreas degradadas, a EcoConsciência coloca a educação ambiental em prática. Vemos em primeira mão como crianças e adultos se transformam ao aprenderem sobre a terra, a água e a vida que nos rodeia. Eles não apenas adquirem conhecimento, mas desenvolvem um senso de responsabilidade e pertencimento ao planeta.</p>
@@ -62,16 +67,25 @@
                     <img src="../images/blog-post-educacao.jpg" alt="Mãos segurando o planeta Terra em um fundo de natureza">
                 </figure>
             </article>
-            <div class="back-to-projects"> <a href="../blog.html"><i class="fas fa-arrow-left"></i> Voltar para o Blog</a>
+            <div class="back-to-projects">
+                <a href="../blog.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar para o Blog</a>
             </div>
         </div>
     </main>
+
     <footer class="main-footer">
         <div class="container">
             <div class="footer-contact">
-                <span><i class="fas fa-phone"></i> (11) 3234-5678</span>
-                <span><i class="fas fa-envelope"></i> contato@ecoconciencia.com</span>
-                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+                <span><i class="fas fa-phone" aria-hidden="true"></i> (11) 3234-5678</span>
+                <span><i class="fas fa-envelope" aria-hidden="true"></i> contato@ecoconciencia.com</span>
+                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+            </div>
+
+            <div class="theme-switcher">
+                <button id="theme-toggle-button" aria-label="Alternar tema claro/escuro">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span class="sr-only">Alternar tema</span>
+                </button>
             </div>
             <div class="footer-copyright">
                 <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>
