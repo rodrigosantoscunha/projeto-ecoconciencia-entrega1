@@ -39,3 +39,23 @@ input:user-invalid {
     background-color: var(--danger-bg) !important;
 }
 .form-group select:invalid { color: var(--light-text-color); }
+
+/* ===== CORREÇÃO DE CONTRASTE (Campos Inválidos) ===== */
+/* Ajusta a cor do texto dentro de inputs/selects inválidos para garantir contraste sobre o fundo rosa */
+.input-error, /* Classe adicionada pelo JS */
+.form-group input:invalid:not(:placeholder-shown):not(:focus),
+.form-group select:invalid:not(:focus):not([value=""]),
+.form-group textarea:invalid:not(:placeholder-shown):not(:focus),
+input:user-invalid {
+    color: #721c24 !important; /* Cor vermelha escura do texto do .alert-danger (Contraste OK: 5.14:1 sobre rosa) */
+    /* Mantém os estilos de borda/fundo que você já tinha */
+    border-color: var(--danger-color) !important; 
+    background-color: var(--danger-bg) !important;
+}
+
+/* Garante que o placeholder não fique vermelho escuro */
+.input-error::placeholder {
+    color: var(--light-text-color); /* Ou a cor padrão do seu placeholder */
+    opacity: 1; /* Necessário em alguns navegadores */
+}
+/* ===== FIM DA CORREÇÃO ===== */

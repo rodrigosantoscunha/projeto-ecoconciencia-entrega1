@@ -18,3 +18,21 @@
     --warning-bg: #fff3cd;
     --info-bg: #d1ecf1;
 }
+
+/* Cores Alternativas (Modo Escuro) */
+body.dark-mode {
+    --primary-color: #6B8E6B; /* Verde Musgo (um pouco mais claro para contraste) */
+    --secondary-color: #CED8AE; /* Verde/Bege (mais claro) */
+    --dark-text-color: #f0f0f0; /* Texto Principal (branco suave) */
+    --medium-text-color: #cccccc; /* Texto Secundário (cinza claro) */
+    --light-text-color: #aaaaaa; /* Texto Menos Importante (cinza mais escuro) */
+    --white-color: #1a1a1a; /* Fundo Principal (cinza quase preto) */
+    --light-bg-color: #2a2a2a; /* Fundo Secundário (cinza escuro) */
+    --border-color: #444; /* Borda (cinza médio) */
+    --footer-bg-color: #111; /* Fundo Rodapé (preto suave) */
+    /* Cores de Alerta (precisam ser ajustadas para fundo escuro) */
+    --success-color: #A8DAB5; --success-bg: #2A4B3A;
+    --danger-color: #F5B7BD;  --danger-bg: #5A2A2F;
+    --warning-color: #FFE69C; --warning-bg: #66500A;
+    --info-color: #A3DFF0;    --info-bg: #1B5260;
+}

@@ -1,16 +1,131 @@
-.main-header { background: var(--white-color); padding: 15px 0; border-bottom: 1px solid var(--border-color); width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.main-header .container { display: flex; justify-content: space-between; align-items: center; }
-.main-header .logo img { max-height: 40px; width: auto; }
-.main-header .main-nav { display: flex; align-items: center; }
-.main-header .main-nav a, .main-header .nav-item { margin: 0 12px; }
-.main-header .main-nav a { font-weight: 400; font-size: 1em; color: var(--medium-text-color); padding-bottom: 5px; border-bottom: 2px solid transparent; transition: color 0.3s, border-color 0.3s; }
-.main-header .main-nav a:hover, .main-header .main-nav a.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
-.menu-toggle, .menu-close { display: none; background: none; border: none; font-size: 1.8em; color: var(--primary-color); cursor: pointer; }
-.nav-item.dropdown { position: relative; display: inline-block; }
-.nav-link { display: inline-flex; align-items: center; }
-.dropdown-icon { font-size: 0.7em; margin-left: 8px; transition: transform 0.3s ease; }
-.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--white-color); border: 1px solid var(--border-color); border-radius: 0 0 5px 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); list-style: none; padding: 10px 0; margin: 5px 0 0 0; min-width: 220px; z-index: 100; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; }
-.dropdown-menu li a { display: block; padding: 10px 20px; color: var(--medium-text-color); white-space: nowrap; font-size: 0.95em; }
-.dropdown-menu li a:hover { background-color: var(--light-bg-color); color: var(--primary-color); }
-.nav-item.dropdown:hover > .dropdown-menu { display: block; opacity: 1; visibility: visible; transform: translateY(0); }
-.nav-item.dropdown:hover .dropdown-icon { transform: rotate(180deg); }
+.main-header {
+    background: var(--white-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-header .logo img {
+    max-height: 40px;
+    width: auto;
+}
+.main-header .main-nav {
+    display: flex;
+    align-items: center;
+}
+.main-header .main-nav a,
+.main-header .nav-item {
+    margin: 0 12px;
+}
+.main-header .main-nav a {
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--medium-text-color);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+.main-header .main-nav a:hover,
+.main-header .main-nav a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+.menu-toggle, .menu-close {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Dropdown */
+.nav-item.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer; /* Indica que é clicável */
+}
+.dropdown-icon {
+    font-size: 0.7em;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+/* Roda o ícone quando o menu está ABERTO (aria-expanded="true") */
+.nav-link[aria-expanded="true"] .dropdown-icon {
+    transform: rotate(180deg);
+}
+.dropdown-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 5px 0 0 0;
+    min-width: 220px;
+    z-index: 100;
+    /* Animação */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s, transform 0.3s ease; /* Atraso na visibilidade */
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--medium-text-color);
+    white-space: nowrap;
+    font-size: 0.95em;
+    border-bottom: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus { /* Adiciona estilo de foco para teclado */
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    outline: none; /* Remove outline padrão, confia no background/cor */
+}
+
+/* ===== CORREÇÃO PARA ACESSIBILIDADE ===== */
+/* Remove a regra de hover que mostrava o menu */
+/*
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+*/
+
+/* Mostra o dropdown quando a classe .dropdown-visible é adicionada pelo JS */
+.dropdown-menu.dropdown-visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, visibility 0s ease 0s, transform 0.3s ease; /* Transição imediata da visibilidade */
+}
+/* ===== FIM DA CORREÇÃO ===== */
+
+/* Media Query para Menu Mobile (Exemplo, ajuste conforme seu _layout.css) */
+@media (max-width: 992px) {
+   /* Estilos mobile que você já tem... */
+   /* Garante que o dropdown JS funcione no mobile se necessário */
+   /* Se o dropdown mobile for diferente, precisará de lógica JS/CSS adicional */
+}

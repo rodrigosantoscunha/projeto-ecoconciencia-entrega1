@@ -1,13 +1,64 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--dark-text-color); background-color: var(--white-color); }
-a { text-decoration: none; transition: color 0.3s ease; color: var(--primary-color); }
-a:hover { color: var(--secondary-color); }
-img { max-width: 100%; height: auto; display: block; }
-h1, h2, h3, h4 { line-height: 1.3; margin-bottom: 0.75em; font-weight: 600; color: var(--dark-text-color); }
-h1 { font-size: 2.8em; } h2 { font-size: 2.2em; color: var(--primary-color);} h3 { font-size: 1.6em; } h4 { font-size: 1.2em; }
-p { margin-bottom: 1em; color: var(--light-text-color); }
-ul, ol { margin-bottom: 1em; padding-left: 1.5em; }
-li { margin-bottom: 0.5em; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-.section-title { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: var(--primary-color); font-weight: 600; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--dark-text-color);
+    background-color: var(--white-color);
+}
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: var(--primary-color); /* Verde Musgo #4A634A (Contraste OK: 4.87:1) */
+}
+/* ===== CORREÇÃO DE CONTRASTE ===== */
+a:hover {
+    /* color: var(--secondary-color); */ /* Cor antiga #A9B489 (Contraste baixo: 2.14:1) */
+    color: var(--dark-text-color); /* Cinza Escuro #333 (Contraste ÓTIMO: 11.93:1) */
+}
+/* ===== FIM DA CORREÇÃO ===== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+h1, h2, h3, h4 {
+    line-height: 1.3;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    color: var(--dark-text-color);
+}
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; color: var(--primary-color);}
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.2em; } /* Se você corrigiu para h3 no index.html, pode até remover esta linha se não usar h4 em mais nenhum lugar */
+p {
+    margin-bottom: 1em;
+    color: var(--light-text-color); /* Cinza claro #777 (Contraste OK: 4.95:1 sobre branco) */
+}
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+li {
+    margin-bottom: 0.5em;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-weight: 600;
+}

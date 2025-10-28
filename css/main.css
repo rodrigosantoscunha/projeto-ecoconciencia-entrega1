@@ -24,3 +24,33 @@
     display: block;          /* Faz ocupar a própria linha */
     margin-top: 5px;         /* Espaçamento do campo acima */
 }
+
+/* =======================================
+   ACESSIBILIDADE (ENTREGA IV)
+   ======================================= */
+
+/* 1. Link "Pular para o Conteúdo" */
+.skip-link {
+    position: absolute;
+    left: -9999px; /* Joga o link para fora da tela */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    
+    /* Quando ele aparecer, vai ficar assim: */
+    background-color: #333; /* Fundo preto */
+    color: #fff;            /* Texto branco */
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000; /* Fica na frente de tudo */
+}
+
+/* Quando o usuário aperta TAB, o link recebe "foco" e aparece */
+.skip-link:focus {
+    left: 10px; /* Traz o link de volta para a tela */
+    top: 10px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
