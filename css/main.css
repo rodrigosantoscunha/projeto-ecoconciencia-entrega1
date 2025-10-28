@@ -6,3 +6,21 @@
 @import '_layout.css';
 @import '_components.css';
 @import '_forms.css';
+
+/* ========================================================================
+   ESTILOS DE VALIDAÇÃO DE FORMULÁRIO
+   ======================================================================== */
+
+/* Estilo para o campo (input/select) quando houver erro */
+.input-error {
+    border-color: #e74c3c; /* Vermelho */
+    background-color: #fbeeee;
+}
+
+/* Estilo para a mensagem de erro <small> criada pelo JS */
+.error-message {
+    color: #e74c3c;         /* Cor do texto vermelha */
+    font-size: 0.85rem;      /* Tamanho de fonte pequeno */
+    display: block;          /* Faz ocupar a própria linha */
+    margin-top: 5px;         /* Espaçamento do campo acima */
+}
