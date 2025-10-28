@@ -7,7 +7,7 @@
  usando um "ouvinte" principal.
 
  Funcionalidades:
- 1. Menu Mobile (Hambúrguer)
+ 1. Menu Mobile (Hambúrguer) - Inclui ARIA para acessibilidade
  2. Máscaras de Formulário (iMask)
  3. Validação do Formulário de Cadastro (Entrega III)
  4. Roteamento SPA (Single Page Application) (Entrega III)
@@ -30,37 +30,57 @@ document.addEventListener('DOMContentLoaded', () => {
 ========================================================================
  FUNCIONALIDADE 1: Menu Mobile (Hambúrguer)
  - Controla a abertura e fechamento do menu em telas pequenas.
+ - Atualiza atributos ARIA para acessibilidade (Entrega IV).
 ========================================================================
 */
 function initMenuMobile() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuClose = document.querySelector('.menu-close');
-    const mainNav = document.querySelector('.main-nav');
+    // Seleciona os botões e o menu (o <nav> deve ter id="main-navigation" no HTML)
+    const menuToggle = document.querySelector('.menu-toggle'); // Botão Hambúrguer
+    const menuClose = document.querySelector('.menu-close');   // Botão 'X'
+    const mainNav = document.querySelector('#main-navigation'); // O Menu <nav>
 
+    // Verifica se os elementos essenciais existem
     if (menuToggle && mainNav) {
+        // --- Ação de Abrir o Menu ---
         menuToggle.addEventListener('click', () => {
             mainNav.classList.add('menu-open');
+            // Informa ao leitor de tela que o menu está expandido
+            menuToggle.setAttribute('aria-expanded', 'true');
         });
     }
 
-    if (menuClose && mainNav) {
-        menuClose.addEventListener('click', () => {
+    // Função auxiliar para fechar o menu (evita repetição)
+    function closeMenu() {
+        if (mainNav && menuToggle && mainNav.classList.contains('menu-open')) {
             mainNav.classList.remove('menu-open');
-        });
+            // Informa ao leitor de tela que o menu está fechado
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
     }
 
-    // Fecha o menu ao clicar em um link (importante para a SPA)
+    // --- Ação de Fechar com o Botão 'X' ---
+    if (menuClose) {
+        menuClose.addEventListener('click', closeMenu);
+    }
+
+    // --- Ação de Fechar ao Clicar em um Link (dentro do menu) ---
     if (mainNav) {
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (mainNav.classList.contains('menu-open')) {
-                    mainNav.classList.remove('menu-open');
-                }
-            });
+            // Adiciona ouvinte a cada link DENTRO do <nav>
+            link.addEventListener('click', closeMenu);
         });
     }
+
+    // --- Ação de Fechar com a Tecla ESC ---
+    document.addEventListener('keydown', (event) => {
+        // Verifica se a tecla pressionada foi Escape E se o menu está aberto
+        if (event.key === 'Escape' && mainNav && mainNav.classList.contains('menu-open')) {
+            closeMenu();
+        }
+    });
 }
+
 
 /*
 ========================================================================
@@ -102,9 +122,11 @@ function initFormValidation() {
     // Seleciona os campos que precisam de validação
     const nome = document.getElementById('nome');
     const email = document.getElementById('email');
-    const cpfInput = document.getElementById('cpf');
+    const cpfInput = document.getElementById('cpf'); // Reutiliza a variável das máscaras
+    const telefoneInput = document.getElementById('telefone'); // Reutiliza a variável das máscaras
     const nascimento = document.getElementById('nascimento');
     const endereco = document.getElementById('endereco');
+    const cepInput = document.getElementById('cep'); // Reutiliza a variável das máscaras
     const cidade = document.getElementById('cidade');
     const estado = document.getElementById('estado');
     const senha = document.getElementById('senha');
@@ -133,6 +155,9 @@ function initFormValidation() {
         if (email.value.trim() === '') {
             showError(email, 'O campo e-mail é obrigatório.');
             hasError = true;
+        } else if (!isValidEmail(email.value)) { // Adiciona validação de formato de email
+             showError(email, 'Por favor, digite um e-mail válido.');
+             hasError = true;
         }
 
         // Verificação: Senha (mínimo 8 caracteres)
@@ -142,7 +167,10 @@ function initFormValidation() {
         }
 
         // Verificação: Confirmação de Senha
-        if (confirmaSenha.value !== senha.value) {
+        if (confirmaSenha.value === '') {
+             showError(confirmaSenha, 'Confirme sua senha.');
+             hasError = true;
+        } else if (confirmaSenha.value !== senha.value) {
             showError(confirmaSenha, 'As senhas não conferem.');
             hasError = true;
         }
@@ -151,24 +179,48 @@ function initFormValidation() {
         if (cpfInput.value.trim() === '') {
             showError(cpfInput, 'O campo CPF é obrigatório.');
             hasError = true;
-        } else if (cpfInput.value.length < 14) {
+        } else if (cpfInput.value.length < 14) { // Verifica se a máscara foi preenchida
              showError(cpfInput, 'CPF incompleto. Verifique os números.');
              hasError = true;
         }
 
-        // Verificação: Campos obrigatórios simples
+        // Verificação: Telefone (opcional, mas bom ter)
+        if (telefoneInput.value.trim() === '') {
+            showError(telefoneInput, 'O campo Telefone é obrigatório.');
+            hasError = true;
+        } else if (telefoneInput.value.length < 15) { // Verifica se a máscara foi preenchida
+             showError(telefoneInput, 'Telefone incompleto.');
+             hasError = true;
+        }
+
+        // Verificação: Nascimento
         if (nascimento.value === '') {
             showError(nascimento, 'Data de nascimento é obrigatória.');
             hasError = true;
         }
+
+        // Verificação: CEP
+        if (cepInput.value.trim() === '') {
+            showError(cepInput, 'O campo CEP é obrigatório.');
+            hasError = true;
+        } else if (cepInput.value.length < 9) { // Verifica se a máscara foi preenchida
+             showError(cepInput, 'CEP incompleto.');
+             hasError = true;
+        }
+
+        // Verificação: Endereço
         if (endereco.value.trim() === '') {
             showError(endereco, 'Endereço é obrigatório.');
             hasError = true;
         }
+
+         // Verificação: Cidade
          if (cidade.value.trim() === '') {
             showError(cidade, 'Cidade é obrigatória.');
             hasError = true;
         }
+        
+        // Verificação: Estado
         if (estado.value === '') {
             showError(estado, 'Selecione um estado.');
             hasError = true;
@@ -181,40 +233,60 @@ function initFormValidation() {
             // Se não houver erros, exibe sucesso!
             alert('Cadastro realizado com sucesso! (Em um projeto real, aqui enviaria os dados para o servidor)');
             // formCadastro.submit(); // Descomente esta linha se quiser enviar o formulário de verdade
+            // formCadastro.reset(); // Opcional: Limpa o formulário após o sucesso
         }
     });
 }
 
 /**
  * Função Auxiliar da Validação: showError
- * Exibe uma mensagem de erro abaixo do campo (input).
+ * Exibe uma mensagem de erro abaixo do campo (input) e adiciona ARIA.
  */
 function showError(input, message) {
-    // Adiciona a classe 'input-error' ao campo para destacá-lo (vermelho)
     input.classList.add('input-error');
-
+    // Adiciona ARIA para leitores de tela saberem que o campo é inválido
+    input.setAttribute('aria-invalid', 'true'); 
+    
     // Cria o elemento <small> para exibir a mensagem
     const errorElement = document.createElement('small');
-    errorElement.className = 'error-message'; // Adiciona uma classe para o CSS
+    errorElement.className = 'error-message'; 
     errorElement.textContent = message;
+    // Adiciona um ID único para a mensagem de erro (necessário para aria-describedby)
+    const errorId = input.id + '-error';
+    errorElement.id = errorId; 
+    
+    // Associa a mensagem de erro ao input via ARIA
+    input.setAttribute('aria-describedby', errorId);
 
     // Insere a mensagem de erro logo após o campo (input)
-    // .parentNode (é o <div class="form-group">)
     input.parentNode.appendChild(errorElement);
 }
 
 /**
  * Função Auxiliar da Validação: clearErrors
- * Remove todas as mensagens de erro e classes de destaque.
+ * Remove todas as mensagens de erro e atributos ARIA relacionados a erros.
  */
 function clearErrors() {
-    // Remove todas as classes 'input-error'
     const errorInputs = document.querySelectorAll('.input-error');
-    errorInputs.forEach(input => input.classList.remove('input-error'));
+    errorInputs.forEach(input => {
+        input.classList.remove('input-error');
+        // Remove os atributos ARIA relacionados ao erro
+        input.removeAttribute('aria-invalid');
+        input.removeAttribute('aria-describedby');
+    });
 
-    // Remove todas as mensagens de erro <small>
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(message => message.remove());
+}
+
+/**
+ * Função Auxiliar da Validação: isValidEmail
+ * Verifica se uma string parece ser um formato de email válido.
+ */
+function isValidEmail(email) {
+    // Expressão regular simples para validação de email
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
 }
 
 
@@ -225,15 +297,18 @@ function clearErrors() {
 ========================================================================
 */
 function initSPARouting() {
-    // Seleciona todos os links da navegação principal
-    const navLinks = document.querySelectorAll('.main-nav a');
+    // Seleciona todos os links da navegação principal E outros links internos
+    // que não devem causar recarregamento completo (ex: links em cards)
+    const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="."], a[href^="#"]'); 
     
-    navLinks.forEach(link => {
+    internalLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             const href = link.getAttribute('href');
 
-            // 1. Verifica se é um link interno (não âncora, não externo)
-            if (href && !href.startsWith('#') && !href.startsWith('http')) {
+            // 1. Verifica se é um link interno válido para SPA
+            // Ignora links externos, links para a mesma página (#) ou links com target="_blank"
+            if (href && !href.startsWith('#') && !href.startsWith('http') && link.getAttribute('target') !== '_blank') {
+                
                 // 2. Previne o recarregamento padrão da página
                 event.preventDefault(); 
                 
@@ -243,14 +318,18 @@ function initSPARouting() {
                 // 4. Atualiza a URL na barra do navegador
                 history.pushState(null, '', href);
             }
+            // Se for um link de âncora (#) na mesma página, deixa o navegador rolar
+            else if (href && href.startsWith('#')) {
+               // Deixa o comportamento padrão acontecer
+            }
         });
     });
 
     // 5. Ouve o evento de "voltar/avançar" do navegador
     window.addEventListener('popstate', () => {
-        // Carrega a página correspondente ao histórico
-        // location.pathname nos dá a URL atual (ex: "/sobre.html")
-        loadPage(location.pathname);
+        // Pega o caminho atual (ex: "/sobre.html") e carrega a página correspondente
+        const currentPath = location.pathname + location.search + location.hash;
+        loadPage(currentPath);
     });
 }
 
@@ -261,11 +340,13 @@ function initSPARouting() {
 async function loadPage(url) {
     try {
         // 1. Busca o arquivo HTML (ex: "sobre.html")
-        const response = await fetch(url);
+        // Adiciona um parâmetro para evitar cache em alguns navegadores (opcional)
+        const response = await fetch(url + '?t=' + Date.now()); 
         
         // 2. Verifica se a requisição foi bem-sucedida (ex: 404)
         if (!response.ok) {
             // Se a página não for encontrada, navega da forma tradicional
+            console.warn(`Página não encontrada (${response.status}): ${url}. Redirecionando...`);
             location.href = url;
             return;
         }
@@ -277,12 +358,13 @@ async function loadPage(url) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(pageHtml, 'text/html');
 
-        // 5. Extrai APENAS o <main> e o <title> da página buscada
-        const newContent = doc.querySelector('.main-content');
+        // 5. Extrai o <main> e o <title> da página buscada
+        // Tenta pegar #app-content primeiro (para o index), senão pega #main-content
+        const newContent = doc.querySelector('#app-content') || doc.querySelector('#main-content');
         const newTitle = doc.querySelector('title');
         
-        // 6. Seleciona o container da nossa SPA
-        const appContent = document.getElementById('app-content');
+        // 6. Seleciona o container da nossa SPA (pode ser #app-content ou #main-content na página atual)
+        const appContent = document.getElementById('app-content') || document.getElementById('main-content');
 
         if (newContent && appContent) {
             // 7. MANIPULAÇÃO DO DOM:
@@ -294,14 +376,19 @@ async function loadPage(url) {
             
             // Rola a página para o topo
             window.scrollTo(0, 0);
+
+            // Re-inicializa máscaras e validações se a nova página tiver formulários
+            // (Isso garante que funcionem após a navegação SPA)
+            initFormMasks(); 
+            initFormValidation();
+
         } else {
-            // Se não encontrar <main>, apenas recarrega (fallback)
-            location.href = url;
+            console.warn(`Container de conteúdo (#app-content ou #main-content) não encontrado na página atual ou na página carregada: ${url}. Redirecionando...`);
+            location.href = url; // Fallback para carregamento normal
         }
         
     } catch (error) {
-        console.error('Erro ao carregar a página:', error);
-        // Em caso de erro de JS, apenas navega da forma tradicional
-        location.href = url;
+        console.error('Erro ao carregar a página via SPA:', error);
+        location.href = url; // Fallback para carregamento normal em caso de erro
     }
 }

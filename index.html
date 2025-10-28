@@ -15,9 +15,10 @@
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo da EcoConsciência"></a>
-            <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
-            <nav class="main-nav">
-                <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav class="main-nav" id="main-navigation">
+    <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times"></i></button>
+    </nav>
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <div class="nav-item dropdown">
@@ -91,7 +92,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
                         <a href="login.html" class="persona-card">
-                            <h4><i class="fas fa-user-cog"></i> Administrador da ONG</h4>
+                            <h3><i class="fas fa-user-cog"></i> Administrador da ONG</h3>
                             <p>Gerencie todo o ecossistema da EcoConsciência de forma centralizada.</p>
                             <ul>
                                 <li>Gerenciar informações institucionais</li>
@@ -103,7 +104,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-12">
                         <a href="login.html" class="persona-card">
-                            <h4><i class="fas fa-users"></i> Voluntário</h4>
+                             <h3><i class="fas fa-users"></i> Voluntário</h3>
                             <p>Encontre oportunidades para fazer a diferença e acompanhe sua jornada.</p>
                             <ul>
                                 <li>Descobrir oportunidades de voluntariado</li>
@@ -115,7 +116,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-12">
                         <a href="login.html" class="persona-card">
-                            <h4><i class="fas fa-heart"></i> Doador e Apoiador</h4>
+                             <h3><i class="fas fa-heart"></i> Doador e Apoiador</h3>
                             <p>Apoie as causas em que acredita com total transparência e segurança.</p>
                             <ul>
                                 <li>Conhecer projetos e seus impactos</li>

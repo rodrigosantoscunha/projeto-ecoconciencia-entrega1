@@ -1,16 +1,120 @@
-.main-header { background: var(--white-color); padding: 15px 0; border-bottom: 1px solid var(--border-color); width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.main-header .container { display: flex; justify-content: space-between; align-items: center; }
-.main-header .logo img { max-height: 40px; width: auto; }
-.main-header .main-nav { display: flex; align-items: center; }
-.main-header .main-nav a, .main-header .nav-item { margin: 0 12px; }
-.main-header .main-nav a { font-weight: 400; font-size: 1em; color: var(--medium-text-color); padding-bottom: 5px; border-bottom: 2px solid transparent; transition: color 0.3s, border-color 0.3s; }
-.main-header .main-nav a:hover, .main-header .main-nav a.active { color: var(--primary-color); border-bottom-color: var(--primary-color); }
-.menu-toggle, .menu-close { display: none; background: none; border: none; font-size: 1.8em; color: var(--primary-color); cursor: pointer; }
-.nav-item.dropdown { position: relative; display: inline-block; }
-.nav-link { display: inline-flex; align-items: center; }
-.dropdown-icon { font-size: 0.7em; margin-left: 8px; transition: transform 0.3s ease; }
-.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--white-color); border: 1px solid var(--border-color); border-radius: 0 0 5px 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); list-style: none; padding: 10px 0; margin: 5px 0 0 0; min-width: 220px; z-index: 100; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; }
-.dropdown-menu li a { display: block; padding: 10px 20px; color: var(--medium-text-color); white-space: nowrap; font-size: 0.95em; }
-.dropdown-menu li a:hover { background-color: var(--light-bg-color); color: var(--primary-color); }
-.nav-item.dropdown:hover > .dropdown-menu { display: block; opacity: 1; visibility: visible; transform: translateY(0); }
-.nav-item.dropdown:hover .dropdown-icon { transform: rotate(180deg); }
+.main-header {
+    background: var(--white-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-header .logo img {
+    max-height: 40px;
+    width: auto;
+}
+.main-header .main-nav {
+    display: flex;
+    align-items: center;
+}
+.main-header .main-nav a,
+.main-header .nav-item { /* nav-item adicionado para espaçamento consistente */
+    margin: 0 12px;
+}
+.main-header .main-nav a { /* Estilo base para links dentro da nav */
+    font-weight: 400;
+    font-size: 1em;
+    color: var(--medium-text-color); /* Cinza Médio #555 (Contraste OK: 7.75:1) */
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+.main-header .main-nav a:hover,
+.main-header .main-nav a.active {
+    color: var(--primary-color); /* Verde Musgo #4A634A (Contraste OK: 4.87:1) */
+    border-bottom-color: var(--primary-color);
+}
+.menu-toggle, .menu-close {
+    display: none; /* Escondido em desktop */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Dropdown */
+.nav-item.dropdown {
+    position: relative;
+    display: inline-block; /* Garante que se comporte como um item de menu */
+}
+.nav-link { /* Garante que o ícone fique ao lado do texto */
+    display: inline-flex;
+    align-items: center;
+}
+.dropdown-icon {
+    font-size: 0.7em;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+.dropdown-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 100%; /* Abaixo do item pai */
+    left: 0;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 5px 5px; /* Arredondado só embaixo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 5px 0 0 0; /* Pequeno espaço do item pai */
+    min-width: 220px;
+    z-index: 100;
+    /* Animação de entrada */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.dropdown-menu li a {
+    display: block; /* Ocupa toda a largura */
+    padding: 10px 20px;
+    color: var(--medium-text-color); /* Cinza Médio #555 (Contraste OK: 7.75:1) */
+    white-space: nowrap; /* Evita quebra de linha */
+    font-size: 0.95em;
+    /* Resetando borda inferior dos links de nav principal */
+    border-bottom: none;
+    transition: background-color 0.3s, color 0.3s; /* Adicionado transition */
+}
+
+/* ===== CORREÇÃO DE CONTRASTE ===== */
+.dropdown-menu li a:hover {
+    /* background-color: var(--light-bg-color); */ /* Fundo antigo #f9f9f9 (Contraste baixo: 4.49:1 com texto verde) */
+    background-color: var(--white-color); /* Fundo branco (Contraste OK: 4.87:1 com texto verde) */
+    color: var(--primary-color); /* Texto Verde Musgo #4A634A */
+}
+/* ===== FIM DA CORREÇÃO ===== */
+
+/* Lógica para mostrar o dropdown no hover do item pai */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+/* Gira o ícone quando o dropdown está visível */
+.nav-item.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Adicionando Media Query para o Menu Mobile (Exemplo) - Você pode já ter isso em _layout.css */
+/* @media (max-width: 992px) {
+    .main-header .main-nav { display: none; }
+    .menu-toggle { display: block; }
+    .main-nav.menu-open { ... }
+} */

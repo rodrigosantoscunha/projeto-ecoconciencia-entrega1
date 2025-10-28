@@ -15,9 +15,10 @@
     <header class="main-header">
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo da EcoConsciência"></a>
-            <button class="menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
-            <nav class="main-nav">
-                <button class="menu-close" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-controls="main-navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav class="main-nav" id="main-navigation">
+    <button class="menu-close" aria-label="Fechar menu" aria-controls="main-navigation"><i class="fas fa-times"></i></button>
+    </nav>
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <div class="nav-item dropdown"> 
@@ -48,7 +49,7 @@
             <div class="projects-intro">
                 <h2>Iniciativas que Transformam</h2>
                 <p>Na EcoConsciência, acreditamos que a ação prática, aliada à educação, é fundamental para a construção de um futuro sustentável. Os nossos projetos são desenhados para gerar impacto real nas comunidades e no meio ambiente, focando em áreas cruciais como a educação ambiental, a recuperação de ecossistemas e a promoção de práticas sustentáveis.</p>
-                </div>
+            </div>
 
             <div class="projects-grid">
                 <a href="projetos/projeto-sementes.html" class="project-card">
@@ -57,4 +58,38 @@
                 </a>
                 <a href="projetos/projeto-guardioes.html" class="project-card">
                     <img src="images/projeto-guardioes.jpg" alt="Mão segurando uma muda de árvore para reflorestamento">
-                    <div class="project-content"><h3>Projeto "Guardiões da Mata"</h3><p class="project-category">Recuperação de Ecossistemas</p><p>Promovemos a recuperação de áreas degradadas e a conservação de ecossistemas nativos através do plantio de árvores e da sensibilização comunitária.</p><span class="project-link">Ver Detalhes <i class="fas fa-arrow-
+                    <div class="project-content"><h3>Projeto "Guardiões da Mata"</h3><p class="project-category">Recuperação de Ecossistemas</p><p>Promovemos a recuperação de áreas degradadas e a conservação de ecossistemas nativos através do plantio de árvores e da sensibilização comunitária.</p><span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span></div>
+                </a>
+                <a href="projetos/projeto-oceano.html" class="project-card">
+                    <img src="images/projeto-oceano.jpg" alt="Pessoas limpando uma praia poluída">
+                    <div class="project-content"><h3>Projeto "Oceano Limpo, Futuro Vivo"</h3><p class="project-category">Conservação Marinha</p><p>Reduzimos a poluição plástica em ambientes costeiros através de ações de limpeza e campanhas de sensibilização sobre o descarte correto de resíduos.</p><span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span></div>
+                </a>
+                <a href="projetos/projeto-cidades.html" class="project-card">
+                    <img src="images/projeto-cidades.jpg" alt="Jardim comunitário em um ambiente urbano">
+                    <div class="project-content"><h3>Projeto "Cidades Verdes, Vidas Sustentáveis"</h3><p class="project-category">Sustentabilidade Urbana</p><p>Incentivamos a criação de espaços verdes urbanos e a implementação de soluções de sustentabilidade em ambientes citadinos.</p><span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span></div>
+                </a>
+                <a href="projetos/projeto-consumo.html" class="project-card">
+                    <img src="images/projeto-consumo.jpg" alt="Pessoa escolhendo produtos sustentáveis em um mercado">
+                    <div class="project-content"><h3>Projeto "Consumo Consciente..."</h3><p class="project-category">Educação para o Consumo</p><p>Educamos e capacitamos consumidores para a adoção de hábitos de consumo mais responsáveis e para a gestão adequada dos seus resíduos.</p><span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span></div>
+                </a>
+            </div>
+            </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-contact">
+                <span><i class="fas fa-phone"></i> (11) 3234-5678</span>
+                <span><i class="fas fa-envelope"></i> contato@ecoconciencia.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Voluntários, Novo Amanhã - São Paulo, SP</span>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 EcoConsciência. Todos os direitos reservados.</p>
+                <p class="slogan">"Cultivando o Futuro, Semeando o Conhecimento."</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script> 
+</body>
+</html>
